@@ -9,36 +9,36 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ContactRepository {
-    private ContactDao mContactDao;
-    private LiveData<List<Contact>> mAllContacts;
+public class TodoRepository {
+    private TodoDao mTodoDao;
+    private LiveData<List<Todo>> mAllTodos;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private static final String NAME = "name";
 
-    ContactRepository(Application application) {
-        ContactRoomDatabase db = ContactRoomDatabase.getDatabase(application);
-        mContactDao = db.contactDao();
-        mAllContacts = mContactDao.getAllContacts();
+    TodoRepository(Application application) {
+        TodoRoomDatabase db = TodoRoomDatabase.getDatabase(application);
+        mTodoDao = db.todoDao();
+        mAllTodos = mTodoDao.getAllTodos();
     }
 
-    LiveData<List<Contact>> getAllContacts() {
-        return mAllContacts;
+    LiveData<List<Todo>> getAllContacts() {
+        return mAllTodos;
     }
 
-    public void insert(final Contact contact) {
+    public void insert(final Todo todo) {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                mContactDao.insert(contact);
+                mTodoDao.insert(todo);
             }
         });
     }
 
-    public void delete(final Contact contact) {
+    public void delete(final Todo todo) {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                mContactDao.delete(contact);
+                mTodoDao.delete(todo);
             }
         });
     }
@@ -47,16 +47,16 @@ public class ContactRepository {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                mContactDao.deleteContact(name);
+                mTodoDao.deleteTodo(name);
             }
         });
     }
 
-    public void update(final Contact contact){
+    public void update(final Todo todo){
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                mContactDao.update(contact);
+                mTodoDao.update(todo);
             }
         });
     }
@@ -65,7 +65,7 @@ public class ContactRepository {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                mContactDao.updateContact(name);
+                mTodoDao.updateContact(name);
             }
         });
     }
@@ -77,26 +77,26 @@ public class ContactRepository {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                mContactDao.deleteAll();
+                mTodoDao.deleteAll();
             }
         });
     }
 
-    public class findContactAsync extends AsyncTask<String, Void, Contact> {
+    public class findContactAsync extends AsyncTask<String, Void, Todo> {
         private String name;
-        private ContactDao dao;
-        private ContactRepository repository;
+        private TodoDao dao;
+        private TodoRepository repository;
 
-        findContactAsync(ContactDao dao, String name) {
+        findContactAsync(TodoDao dao, String name) {
             this.dao = dao;
             this.name = name;
         }
 
         @Override
-        protected Contact doInBackground(String... strings) {
+        protected Todo doInBackground(String... strings) {
 
-            Contact contact = dao.findByName(strings[0]);
-            return contact;
+            Todo todo = dao.findByName(strings[0]);
+            return todo;
         }
     }
 }

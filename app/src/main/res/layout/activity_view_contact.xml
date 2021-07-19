@@ -4,24 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewContactActivity"
+    tools:context=".ViewTodoActivity"
     android:id="@+id/scrol_view"
     android:background="@color/colorScreenBackground">
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
-    <ImageView
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_gravity="center"
-        android:src="@drawable/contacts"
-        android:layout_marginTop="4dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/contact_name"
+        android:id="@+id/title_view"
         android:textSize="48sp"
         android:text="@string/name_"
         android:textColor="@color/colorAccent"
@@ -31,39 +25,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/num"
-        android:textColor="#87E046"
+        android:textColor="@color/colorAccent"
         android:textSize="24sp"
         android:layout_gravity="center"
-        android:id="@+id/contact_phone"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="62dp"
-        android:padding="8dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:id="@+id/call_button"
-            android:background="@drawable/button_background"
-            android:src="@drawable/ic_call_black_24dp"/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginRight="16dp"
-            android:id="@+id/chat_button"
-            android:layout_marginLeft="16dp"
-            android:background="@drawable/button_background"
-            android:src="@drawable/ic_chat_black_24dp"/>
-
-    </LinearLayout>
+        android:id="@+id/desc_view"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,7 +39,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/contact_email"
+        android:id="@+id/date_view"
         android:text="Email : nam@gjs.com"
         android:gravity="center_horizontal"
         android:textColor="@color/colorAccent"
@@ -86,37 +51,17 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textColor="@color/colorAccent"
-        android:id="@+id/contact_age"
+        android:id="@+id/time_view"
         android:text="Age : 23"
         android:textSize="24dp"
         android:layout_margin="2dp"/>
 
-    <TextView
+        <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/is_completed_view"
         android:gravity="center_horizontal"
-        android:textColor="@color/colorAccent"
-        android:id="@+id/contact_gender"
-        android:text="Gender : Male"
-        android:textSize="24dp"
-        android:layout_margin="2dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/contact_city"
-        android:gravity="center_horizontal"
-        android:textColor="@color/colorAccent"
-        android:text="City : Mysfa"
-        android:textSize="24dp"
-        android:layout_margin="2dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/contact_college"
-        android:gravity="center_horizontal"
-        android:textColor="@color/colorAccent"
+        android:textColor="#87E046"
         android:text="College : Mldsdg"
         android:textSize="24dp"
         android:layout_margin="2dp"/>
