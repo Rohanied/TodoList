@@ -8,26 +8,26 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 public class TodoViewModel extends AndroidViewModel {
-    private LiveData<List<Todo>> mAllContact;
-    private TodoRepository mContactRepository;
+    private LiveData<List<Todo>> allTodos;
+    private TodoRepository mTodoRepository;
 
     public TodoViewModel(Application application){
         super(application);
-        mContactRepository = new TodoRepository(application);
-        mAllContact = mContactRepository.getAllContacts();
+        mTodoRepository = new TodoRepository(application);
+        allTodos = mTodoRepository.getList();
     }
 
-    LiveData<List<Todo>> getAllContact()  { return mAllContact; }
+    LiveData<List<Todo>> getAllTodo()  { return allTodos; }
 
-    public void insert(Todo todo){ mContactRepository.insert(todo);}
+    public void insert(Todo todo){ mTodoRepository.insert(todo);}
 
-    public void deleteAll(){ mContactRepository.deleteAll();}
+    public void deleteAll(){ mTodoRepository.deleteAll();}
 
-    public void delete(Todo todo){ mContactRepository.insert(todo);}
+    public void delete(Todo todo){ mTodoRepository.insert(todo);}
 
-    public void deleteByName(String name){ mContactRepository.deleteByName(name);}
+    public void deleteByName(String name){ mTodoRepository.deleteByName(name);}
 
-    public void update(Todo todo){ mContactRepository.update(todo);}
+    public void update(Todo todo){ mTodoRepository.update(todo);}
 
-    public void contactUpdate(String name){ mContactRepository.update(name);}
+    public void contactUpdate(String name){ mTodoRepository.update(name);}
 }

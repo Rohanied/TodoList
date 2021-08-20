@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TheContactApp</string>
+    <string name="app_name">Todo List</string>
     <string name="action_settings">Settings</string>
     <string name="name">No Name</string>
     <string name="delete_all">Delete All</string>
@@ -19,6 +19,7 @@
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
     <string name="share">Share</string>
-    <string name="todos">Contacts</string>
+    <string name="todos">To-do</string>
+    <string name="app_label">The Todo List App</string>
 
 </resources>

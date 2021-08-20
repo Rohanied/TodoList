@@ -21,7 +21,7 @@ public class TodoRepository {
         mAllTodos = mTodoDao.getAllTodos();
     }
 
-    LiveData<List<Todo>> getAllContacts() {
+    LiveData<List<Todo>> getList() {
         return mAllTodos;
     }
 

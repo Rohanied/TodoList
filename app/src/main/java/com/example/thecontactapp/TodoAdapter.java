@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ContactHolder> {
+public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.TodoHolder> {
     LayoutInflater mInflater;
     List<Todo> mTodos;
     //private static Clicklistener clicklistener;
@@ -29,13 +29,13 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ContactHolder>
 
     @NonNull
     @Override
-    public ContactHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TodoHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.recyclerview_item, parent, false);
-        return new ContactHolder(view);
+        return new TodoHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ContactHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull TodoHolder holder, final int position) {
         if(mTodos !=null){
 
         final Todo todo = mTodos.get(position);
@@ -80,13 +80,13 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ContactHolder>
     }
 
 
-    class ContactHolder extends RecyclerView.ViewHolder {
+    class TodoHolder extends RecyclerView.ViewHolder {
         private final TextView nameTextView;
         private final TextView phoneTextView;
         private  CheckBox isCompletedCheck;
         private LinearLayout ll;
 
-        private ContactHolder(View view){
+        private TodoHolder(View view){
             super(view);
             nameTextView=view.findViewById(R.id.name);
             phoneTextView=view.findViewById(R.id.phone);

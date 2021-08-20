@@ -23,8 +23,6 @@ public interface TodoDao {
     @Query("DELETE from Todo")
     void deleteAll();
 
-    @Query("SELECT * from Todo LIMIT 1")
-    Todo[] getAnyTodo();
 
     @Query("DELETE FROM Todo WHERE title = :title")
     void deleteTodo(String title);

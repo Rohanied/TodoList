@@ -8,7 +8,6 @@ import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerClickList
 
         mContactViewModel = ViewModelProviders.of(this).get(TodoViewModel.class);
 
-        mContactViewModel.getAllContact().observe(this, new Observer<List<Todo>>() {
+        mContactViewModel.getAllTodo().observe(this, new Observer<List<Todo>>() {
             @Override
             public void onChanged(List<Todo> todos) {
                 adapter.setContacts(todos);
